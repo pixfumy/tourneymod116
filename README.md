@@ -12,3 +12,5 @@ The official tournament mod for Minecraft Speedrun Mayhem 3. This mod builds on 
 ## Implementation
 
 Unlike most other standardized RNG mods which rely on mixins to LevelProperties to store RNG seeds, this mod uses minecraft's own built-in class for saving misc data to the world, PersistentState. If you want to standardize a source of RNG all you need to do is initialize a single instance of RNGStream (which extends PersistentState). Each RNGStream stores a seed and has a way of getting the current seed and updating it, which can be used to generate a consistent sequence of "random" events which depends only on the world seed and is not affected by relogs. See BlazeDropsMixin as an example.
+
+The seeds are stored in the world file, in /data/[state name].dat. This can be modified using any NBT editor (I use intellij with the Minecraft Developer Plugin to edit these).
