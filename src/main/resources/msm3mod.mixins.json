@@ -1,0 +1,22 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.pixfumy.msm3mod.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+    "SplashTextMixin",
+    "F3CMixin",
+    "IronGolemDropsMixin",
+    "BlazeDropsMixin",
+    "FlintMixin",
+    "PiglinBrainMixin",
+    "EyeOfEnderMixin",
+    "EnderDragonEntityMixin",
+    "EnderDragonFightMixin",
+    "HoldingPatternPhaseMixin",
+    "TempleMobSpawnMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "msm3mod",
+  "version": "${version}",
+
+  "name": "MSM3 Mod",
+  "description": "The official tournament mod for Minecraft Speedrun Mayhem 3.",
+  "authors": [
+    "pixfumy",
+    "DuncanRuns"
+  ],
+  "contact": {
+    "homepage": "https://github.com/pixfumy"
+  },
+
+  "license": "CC0-1.0",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.pixfumy.msm3mod.MSM3Mod"
+    ]
+  },
+  "mixins": [
+    "msm3mod.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.12.2",
+    "minecraft": "1.16.1",
+    "java": ">=17"
+  }
+}
