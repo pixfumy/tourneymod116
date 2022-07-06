@@ -1,5 +1,5 @@
 # MSM3Mod
-The official tournament mod for Minecraft Speedrun Mayhem 3. This mod builds on previous tournament mods (Pre1.9 Racemod, SeedCycle mod, MSL mod) and accomplishes the functionality of standardizing RNG between players in a more extensible way with less boilerplate.
+The official tournament mod for Minecraft Speedrun Mayhem 3. This mod builds on previous tournament mods (Pre1.9 Racemod, SeedCycle mod, MSL mod) and accomplishes the functionality of standardizing RNG between players in a more extensible way with less boilerplate. I'm hoping that in making this public, the tournament mod problem is solved for good in MCSR and that anyone who knows a bit of fabric can make their own mod based on this.
 
 ## Features
 
