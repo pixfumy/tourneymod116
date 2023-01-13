@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "id": "msm3mod",
+  "id": "tourneymod116",
   "version": "${version}",
 
-  "name": "MSM3 Mod",
-  "description": "The official tournament mod for Minecraft Speedrun Mayhem 3.",
+  "name": "Tourney Mod 116",
+  "description": "A general 1.16 tournament mod.",
   "authors": [
     "pixfumy",
     "DuncanRuns"
@@ -13,16 +13,16 @@
     "homepage": "https://github.com/pixfumy"
   },
 
-  "license": "CC0-1.0",
+  "license": "GPL 3",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.pixfumy.msm3mod.MSM3Mod"
+      "net.pixfumy.tourneymod116.TourneyMod116"
     ]
   },
   "mixins": [
-    "msm3mod.mixins.json"
+    "tourneymod116.mixins.json"
   ],
 
   "depends": {

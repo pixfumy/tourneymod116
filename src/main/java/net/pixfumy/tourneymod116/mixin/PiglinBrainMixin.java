@@ -1,4 +1,4 @@
-package net.pixfumy.msm3mod.mixin;
+package net.pixfumy.tourneymod116.mixin;
 
 import net.minecraft.entity.mob.PiglinBrain;
 import net.minecraft.entity.mob.PiglinEntity;
@@ -10,12 +10,10 @@ import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.PersistentStateManager;
-import net.pixfumy.msm3mod.RNGStream;
+import net.pixfumy.tourneymod116.RNGStream;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.injection.At;
-import org.spongepowered.asm.mixin.injection.Redirect;
 
 import java.util.List;
 

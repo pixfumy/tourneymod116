@@ -1,4 +1,4 @@
-package net.pixfumy.msm3mod.mixin;
+package net.pixfumy.tourneymod116.mixin;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageSource;
@@ -10,7 +10,7 @@ import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.PersistentStateManager;
 import net.minecraft.world.World;
-import net.pixfumy.msm3mod.RNGStream;
+import net.pixfumy.tourneymod116.RNGStream;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(BlazeEntity.class)

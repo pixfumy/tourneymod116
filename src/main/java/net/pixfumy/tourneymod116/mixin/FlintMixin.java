@@ -1,4 +1,4 @@
-package net.pixfumy.msm3mod.mixin;
+package net.pixfumy.tourneymod116.mixin;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -11,7 +11,7 @@ import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.PersistentStateManager;
-import net.pixfumy.msm3mod.RNGStream;
+import net.pixfumy.tourneymod116.RNGStream;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;

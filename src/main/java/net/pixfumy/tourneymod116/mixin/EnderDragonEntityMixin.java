@@ -1,4 +1,4 @@
-package net.pixfumy.msm3mod.mixin;
+package net.pixfumy.tourneymod116.mixin;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.boss.dragon.EnderDragonEntity;

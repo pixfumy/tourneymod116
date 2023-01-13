@@ -1,4 +1,4 @@
-package net.pixfumy.msm3mod;
+package net.pixfumy.tourneymod116;
 
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.PersistentState;

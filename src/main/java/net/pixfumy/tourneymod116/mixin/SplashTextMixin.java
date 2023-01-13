@@ -1,4 +1,4 @@
-package net.pixfumy.msm3mod.mixin;
+package net.pixfumy.tourneymod116.mixin;
 
 import net.minecraft.client.resource.SplashTextResourceSupplier;
 import org.spongepowered.asm.mixin.Mixin;
@@ -10,6 +10,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class SplashTextMixin {
     @Inject(method = "get", at = @At("HEAD"), cancellable = true)
     private void getSplash(CallbackInfoReturnable<String> cir) {
-        cir.setReturnValue("Minecraft Speedrun Mayhem 3");
+        cir.setReturnValue("Subscribe to Cscuile!");
     }
 }
