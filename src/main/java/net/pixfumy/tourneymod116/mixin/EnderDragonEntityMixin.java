@@ -44,7 +44,9 @@ public abstract class EnderDragonEntityMixin
 
     @Inject(method = "<init>", at = @At("TAIL"))
     private void setPerchTime(EntityType entityType, World world, CallbackInfo ci) {
-        perchTime = 600 + (int) (Math.abs(world.getServer().getOverworld().getSeed() ^ 1247012419742L) % 1800); // seed-based random time between 0:30 and 2:00
+        if (!world.isClient()) {
+            perchTime = 600 + (int) (Math.abs(world.getServer().getOverworld().getSeed() ^ 1247012419742L) % 1800); // seed-based random time between 0:30 and 2:00
+        }
     }
 
     @Inject(method = "tickMovement", at = @At("TAIL"))
