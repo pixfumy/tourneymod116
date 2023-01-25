@@ -35,10 +35,16 @@ public abstract class EnderDragonEntityMixin
     @Shadow
     @Final
     private PhaseManager phaseManager;
+    private int perchTime = -1;
     private int perchCounter = 0;
 
     protected EnderDragonEntityMixin(EntityType<? extends MobEntity> entityType, World world) {
         super(entityType, world);
+    }
+
+    @Inject(method = "<init>", at = @At("TAIL"))
+    private void setPerchTime(EntityType entityType, World world, CallbackInfo ci) {
+        perchTime = 600 + (int) (Math.abs(world.getServer().getOverworld().getSeed() ^ 1247012419742L) % 1800); // seed-based random time between 0:30 and 2:00
     }
 
     @Inject(method = "tickMovement", at = @At("TAIL"))
@@ -51,7 +57,7 @@ public abstract class EnderDragonEntityMixin
                 }
             } else {
                 // Wait for 150 seconds then perch
-                if (perchCounter >= 3000) {
+                if (perchCounter >= perchTime) {
                     // 150 seconds is done
                     phaseManager.setPhase(PhaseType.LANDING_APPROACH);
                     perchCounter = -1;
