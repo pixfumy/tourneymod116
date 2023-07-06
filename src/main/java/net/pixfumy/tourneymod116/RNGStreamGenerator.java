@@ -16,7 +16,8 @@ public class RNGStreamGenerator {
         */
         rngSeeds = new HashMap<>() {
             {
-                put("blazeSeed", worldSeed ^ 64711520272L);
+                put("blazeRodSeed", worldSeed ^ 64711520272L);
+                put("blazeSpawnSeed", worldSeed ^ 0x101100F11F01L);
                 put("enderEyeSeed", worldSeed ^ 0x99A2B75BBL);
                 put("flintSeed", worldSeed ^ 0xF110301001B2L);
                 put("piglinSeed", worldSeed ^ 47195191252716912L);
