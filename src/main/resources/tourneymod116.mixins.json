@@ -13,7 +13,8 @@
     "EyeOfEnderMixin",
     "EnderDragonEntityMixin",
     "EnderDragonFightMixin",
-    "TempleMobSpawnMixin"
+    "TempleMobSpawnMixin",
+    "LevelPropertiesMixin"
   ],
   "injectors": {
     "defaultRequire": 1

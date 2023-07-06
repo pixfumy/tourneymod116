@@ -10,7 +10,8 @@ import net.minecraft.loot.context.LootContextTypes;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.PersistentStateManager;
 import net.minecraft.world.World;
-import net.pixfumy.tourneymod116.RNGStream;
+import net.pixfumy.tourneymod116.ILevelProperties;
+import net.pixfumy.tourneymod116.RNGStreamGenerator;
 import org.spongepowered.asm.mixin.Mixin;
 
 @Mixin(BlazeEntity.class)
@@ -21,13 +22,10 @@ public class BlazeDropsMixin extends HostileEntity {
 
     @Override
     protected void dropLoot(DamageSource source, boolean causedByPlayer) {
-        PersistentStateManager persistentStateManager = this.getServer().getOverworld().getPersistentStateManager();
-        RNGStream blazeStream = persistentStateManager.getOrCreate(
-                () -> {return new RNGStream("blaze", this.getServer().getOverworld().getSeed() ^ 7812357104191267L);}, "blaze");
+        RNGStreamGenerator rngStreamGenerator = ((ILevelProperties)this.world.getServer().getOverworld().getLevelProperties()).getRNGStreamGenerator();
         Identifier identifier = this.getLootTable();
         LootTable lootTable = this.world.getServer().getLootManager().getTable(identifier);
-        LootContext.Builder builder = this.getLootContextBuilder(causedByPlayer, source).random(blazeStream.getAndUpdateSeed());
-        blazeStream.markDirty();
+        LootContext.Builder builder = this.getLootContextBuilder(causedByPlayer, source).random(rngStreamGenerator.getAndUpdateSeed("blazeSeed"));
         lootTable.generateLoot(builder.build(LootContextTypes.ENTITY), this::dropStack);
     }
 }
