@@ -15,6 +15,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 /**
  * @Author: DuncanRuns
@@ -45,7 +46,8 @@ public abstract class EnderDragonEntityMixin
     @Inject(method = "<init>", at = @At("TAIL"))
     private void setPerchTime(EntityType entityType, World world, CallbackInfo ci) {
         if (!world.isClient()) {
-            perchTime = 600 + (int) (Math.abs(world.getServer().getOverworld().getSeed() ^ 1247012419742L) % 1800); // seed-based random time between 0:30 and 2:00
+            perchTime = 3600; // 3 minute forced perch even though the dragon's random is standardized, just to avoid any Illumina 1.14 tournament nonsense
+            this.random.setSeed(world.getServer().getOverworld().getSeed() ^ -8422260959436812016L);
         }
     }
 

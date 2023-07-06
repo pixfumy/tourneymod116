@@ -13,7 +13,6 @@
     "EyeOfEnderMixin",
     "EnderDragonEntityMixin",
     "EnderDragonFightMixin",
-    "HoldingPatternPhaseMixin",
     "TempleMobSpawnMixin"
   ],
   "injectors": {
