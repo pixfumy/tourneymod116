@@ -6,6 +6,7 @@
   "client": [
     "access.LivingEntityAccess",
     "BlazeSpawnsMixin",
+    "CommandManagerMixin",
     "SplashTextMixin",
     "ElderGuardianEntityMixin",
     "IronGolemDropsMixin",

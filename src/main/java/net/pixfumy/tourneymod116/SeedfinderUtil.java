@@ -4,6 +4,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.GravelBlock;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.damage.DamageSource;
@@ -17,7 +18,10 @@ import net.minecraft.loot.context.LootContext;
 import net.minecraft.loot.context.LootContextParameter;
 import net.minecraft.loot.context.LootContextParameters;
 import net.minecraft.loot.context.LootContextTypes;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
+import net.minecraft.text.LiteralText;
+import net.minecraft.text.TranslatableText;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.pixfumy.tourneymod116.mixin.access.LivingEntityAccess;
@@ -30,7 +34,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class SeedfinderUtil {
-    public static void tellPlayerCurrentRates(ClientPlayerEntity player, ServerWorld world) {
+    public static void tellPlayerCurrentRates(ServerPlayerEntity player, ServerWorld world) {
         ServerWorld overWorld = world.getServer().getOverworld();
         RNGStreamGenerator originalRNGStreamGenerator = ((ILevelProperties)overWorld.getLevelProperties()).getRNGStreamGenerator();
         RNGStreamGenerator dummyRNGStreamGenerator = new RNGStreamGenerator(overWorld.getSeed());
@@ -46,7 +50,7 @@ public class SeedfinderUtil {
             Identifier identifier = blazeEntity.getLootTable();
             LootTable lootTable = world.getServer().getLootManager().getTable(identifier);
             LootContext.Builder builder = ((LivingEntityAccess)blazeEntity).invokeGetLootContextBuilder(true, DamageSource.GENERIC)
-                    .parameter(LootContextParameters.LAST_DAMAGE_PLAYER, overWorld.getPlayerByUuid(player.getUuid()))
+                    .parameter(LootContextParameters.LAST_DAMAGE_PLAYER, player)
                     .random(dummyRNGStreamGenerator.getAndUpdateSeed("blazeRodSeed"));
             lootTable.generateLoot(builder.build(LootContextTypes.ENTITY), itemStack -> blazeRods.addAndGet(itemStack.getCount()));
             blazeRolls++;
@@ -57,7 +61,7 @@ public class SeedfinderUtil {
         while (!flint) {
             BlockState gravelDefaultState = Blocks.GRAVEL.getDefaultState();
             LootContext.Builder builder = new LootContext.Builder(overWorld).random(dummyRNGStreamGenerator.getAndUpdateSeed("flintSeed"))
-                    .parameter(LootContextParameters.POSITION, overWorld.getPlayerByUuid(player.getUuid()).getBlockPos())
+                    .parameter(LootContextParameters.POSITION, player.getBlockPos())
                     .parameter(LootContextParameters.TOOL, new ItemStack(Items.NETHERITE_SHOVEL));
             List<ItemStack> droppedItems = gravelDefaultState.getDroppedStacks(builder);
             if (droppedItems.stream().anyMatch(itemStack -> itemStack.getItem() == Items.FLINT)) {
@@ -102,7 +106,8 @@ public class SeedfinderUtil {
                 });
         }
 
-        player.sendChatMessage(String.format("Current rates on this world: Blazes: %d/%d, Flint: 1/%d, First ender eye will break after %d throws", blazeRods.get(), blazeRolls, flintRolls, eyeThrows));
-        player.sendChatMessage(String.format("You'll get 12 pearls in %d trades, 10 obby in %d trades, and 60 string in %d trades.", pearlRolls, obsidianRolls, stringRolls));
+        player.sendMessage(new LiteralText(""), false);
+        player.sendMessage(new LiteralText(String.format("Current rates on this world: Blazes: %d/%d, First flint will be after mining %d gravel, First ender eye will break after %d throws,", blazeRods.get(), blazeRolls, flintRolls, eyeThrows)), false);
+        player.sendMessage(new LiteralText(String.format("You'll get 12 pearls in %d trades, 10 obby in %d trades, and 60 string in %d trades.", pearlRolls, obsidianRolls, stringRolls)), false);
     }
 }

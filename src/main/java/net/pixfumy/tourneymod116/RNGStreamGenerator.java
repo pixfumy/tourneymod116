@@ -3,10 +3,7 @@ package net.pixfumy.tourneymod116;
 import net.minecraft.world.World;
 import net.minecraft.world.level.LevelProperties;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class RNGStreamGenerator {
     private HashMap<String, Long> rngSeeds;
@@ -50,5 +47,9 @@ public class RNGStreamGenerator {
 
     public Set<Map.Entry<String, Long>> entrySet() {
         return rngSeeds.entrySet();
+    }
+
+    public Set<String> keySet() {
+        return rngSeeds.keySet();
     }
 }
