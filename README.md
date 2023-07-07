@@ -19,6 +19,6 @@ If you have cheats enabled, there are two commands you can use to modify RNG. Ma
 
 ![image](https://github.com/pixfumy/tourneymod116/assets/95588510/b8087c69-608e-409b-935a-bcb1c99fa1b5)
 
-`resetRNGSeed [blazeRodSeed|blazeSpawnSeed|enderEyeSeed|flintSeed|piglinSeed]` will reroll a specific source of RNG specified in the argument. For example, if you notice that `/rates` is giving you bad blaze rates, you can run `/resetRNGSeed blazeRodSeed` and run `/rates` again until you're happy with them. Note that the seeds autocorrect:
+`/resetRNGSeed [blazeRodSeed|blazeSpawnSeed|enderEyeSeed|flintSeed|piglinSeed]` will reroll a specific source of RNG specified in the argument. For example, if you notice that `/rates` is giving you bad blaze rates, you can run `/resetRNGSeed blazeRodSeed` and run `/rates` again until you're happy with them. Note that the seeds auto-complete:
 
 ![image](https://github.com/pixfumy/tourneymod116/assets/95588510/7560965b-4f08-49f5-bbb7-bd265abe84de)

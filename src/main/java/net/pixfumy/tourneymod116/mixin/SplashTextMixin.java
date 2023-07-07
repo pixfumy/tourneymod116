@@ -10,6 +10,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class SplashTextMixin {
     @Inject(method = "get", at = @At("HEAD"), cancellable = true)
     private void getSplash(CallbackInfoReturnable<String> cir) {
-        cir.setReturnValue("Subscribe to Cscuile!");
+        cir.setReturnValue("Minecraft Relay Cup 3");
     }
 }
