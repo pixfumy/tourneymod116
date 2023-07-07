@@ -4,6 +4,7 @@
   "package": "net.pixfumy.tourneymod116.mixin",
   "compatibilityLevel": "JAVA_8",
   "client": [
+    "access.LivingEntityAccess",
     "BlazeSpawnsMixin",
     "SplashTextMixin",
     "ElderGuardianEntityMixin",

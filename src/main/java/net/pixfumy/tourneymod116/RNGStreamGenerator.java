@@ -1,6 +1,7 @@
 package net.pixfumy.tourneymod116;
 
 import net.minecraft.world.World;
+import net.minecraft.world.level.LevelProperties;
 
 import java.util.HashMap;
 import java.util.Map;
