@@ -8,7 +8,7 @@
 - Golems always drop 4 iron
 - Removes mining fatigue effect from elder guardians
 - Dragon always perches after 3 minutes after entering end, resets on relog.
-- Removes mob spawns in temples during the daytime 
+- Removes mob spawns in temples
 
 
 ## Commands for seedfinders
