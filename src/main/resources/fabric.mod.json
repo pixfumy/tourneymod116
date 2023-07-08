@@ -3,7 +3,7 @@
   "id": "tourneymod116",
   "version": "${version}",
 
-  "name": "Tourney Mod 116",
+  "name": "${archivesBaseName}",
   "description": "A general 1.16 tournament mod.",
   "authors": [
     "pixfumy",
@@ -13,7 +13,7 @@
     "homepage": "https://github.com/pixfumy"
   },
 
-  "license": "GPL 3",
+  "license": "LGPL-3.0",
 
   "environment": "*",
   "entrypoints": {
@@ -28,6 +28,6 @@
   "depends": {
     "fabricloader": ">=0.12.2",
     "minecraft": "1.16.1",
-    "java": ">=17"
+    "java": ">=8"
   }
 }

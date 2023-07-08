@@ -12,7 +12,7 @@ public class RNGStreamGenerator {
         /*  abstracts some of the standardization into this HashMap. To add a new standardized source of RNG, put your entries
             into this map, use your world's RNGStreamGenerator in a mixin, and then update tellPlayerCurrentRates if you want to.
         */
-        rngSeeds = new HashMap<>() {
+        rngSeeds = new HashMap() {
             {
                 put("blazeRodSeed", worldSeed ^ 64711520272L);
                 put("blazeSpawnSeed", worldSeed ^ 0x101100F11F01L);
